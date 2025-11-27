@@ -1,0 +1,5 @@
+pytest
+pytest-cover
+pydantic-ai
+dotenv
+fastmcp
