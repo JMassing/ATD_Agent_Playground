@@ -70,8 +70,6 @@ def run_tests(test_path, verbose=False, coverage=True) -> tuple[int, str]:
     """
     return run_tests_tool(test_path=test_path, verbose=verbose, coverage=coverage)
 
-##### Code above is only for testing purposes, remove when done #####
-
 # Run a chat with the agent
 if __name__ == "__main__":
     chat(agent)

@@ -3,8 +3,6 @@ from pydantic_ai import Agent
 from agents.src.chat_loop import chat
 from agents.tools.file_access import read_file, edit_file, list_files
 
-from dotenv import dotenv_values
-config = dotenv_values(".env")
 class TestGeneratorAgent:
     SYSTEM_PROMPT = """You are an expert software engineer. Your task is to create unit test cases.
                     You will be provided with the path to the source code file that needs to be tested.
