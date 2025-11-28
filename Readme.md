@@ -171,6 +171,7 @@ Ideas for exploration:
 - Run the provided examples (see `graph.py`, `test_generator.py`, `test_runner.py`).
 - Try to extend the graph with new steps (e.g., "generate tests" → "run tests" → "summarize results" → "fix broken tests").
 - What are other multi agent patterns, and when are they a better choice than graphs?
+- Should we use the same llm-model for all agents of our graph?
 
 ### Exercise 4 – MCP Server & IDE Integration (`04_mcp`)
 

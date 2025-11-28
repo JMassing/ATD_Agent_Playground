@@ -1,5 +1,3 @@
-import signal
-
 from pydantic_ai import Agent
 
 from src.chat_loop import chat
