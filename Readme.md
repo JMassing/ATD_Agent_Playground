@@ -69,9 +69,33 @@ export OPENAI_API_KEY="your-secret-api-key-here"
 OPENAI_API_KEY=your-secret-api-key-here
 ```
 
+### 5. Troubleshooting OpenAI API issues
+
+If you run one of the exercises and the call to the OpenAI API fails, here are a few common problems and how to fix them:
+
+- **`insufficient_quota` / not enough credits**  
+  - Symptom: The error message mentions `insufficient_quota`, "You exceeded your current quota", or "account is disabled".  
+  - Fix: Log in to the OpenAI dashboard and check **Usage** and **Billing**. Make sure a payment method is added and there is remaining credit or an active paid plan. Free trial credits may have expired.
+
+- **`invalid_api_key` or authentication errors**  
+  - Symptom: Messages like `invalid_api_key`, `401 Unauthorized`, or "Incorrect API key provided".  
+  - Fix: Re‑create an API key in the OpenAI dashboard, update your `OPENAI_API_KEY` environment variable or `.env` file, and **restart your terminal/VS Code** so the new value is picked up.
+
+- **Environment variable not set / not loaded**  
+  - Symptom: Python error such as `OPENAI_API_KEY` is `None` or not found, or the library complains about missing credentials.  
+  - Fix (PowerShell): Check the variable with `echo $env:OPENAI_API_KEY`. If it is empty, set it again or create a `.env` file in the repo root with `OPENAI_API_KEY=...` and restart the shell.
+
+- **Network / connectivity problems**  
+  - Symptom: Timeouts, `requests.exceptions.ConnectionError`, DNS errors, or `SSL`/certificate problems.  
+  - Fix: Check your internet connection, VPN, and corporate proxy settings. Some corporate networks block access to `api.openai.com`.
+
+- **Wrong model name or region‑specific availability**  
+  - Symptom: Errors like `model_not_found` or messages indicating the model is unavailable.  
+  - Fix: Double‑check the model name used in the examples against the OpenAI docs and your account; if needed, switch to a currently available model.
+
 ---
 
-## Workshop Flow & Exercises
+## Workshop Exercises
 
 Wherever possible, participants are encouraged to **build or extend the agents themselves**, using this repo as a reference and the official documentation at https://ai.pydantic.dev/ as their primary guide.
 
@@ -85,6 +109,8 @@ Steps:
 - Clone this repository and open it in VS Code.
 - Follow the steps in **Getting Started** (virtual env, `pip install -r requirements.txt`, `.env` with `OPENAI_API_KEY`).
 - Optionally run a quick smoke test (e.g., one of the chatbot or agent scripts) to verify the key and environment.
+
+
 
 ### Exercise 1 – Your First Chatbot (`01_chatbot`)
 
