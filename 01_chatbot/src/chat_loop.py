@@ -9,7 +9,8 @@ def stop_conversation(signum, frame):
     print("\nStopping the conversation...")
     run_conversation = False
 
-def sync_chat_loop(agent: Agent):
+def chat(agent: Agent):
+    """Run a chat with the given agent."""
     global run_conversation
     signal.signal(signal.SIGINT, stop_conversation)
     signal.signal(signal.SIGTERM, stop_conversation)

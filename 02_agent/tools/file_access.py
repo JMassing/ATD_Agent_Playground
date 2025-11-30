@@ -2,7 +2,7 @@ import os
 
 def read_file(file_path: str) -> str:
     """
-    Read the contents of a file and return it as a string. Use this when you want to see what's inside a file. Do not use this with directory names."
+    Read the contents of a file and return it as a string. Use this when you want to see what's inside a file. Do not use this with directory names.
 
     Args:
         file_path (str): The path to the file to read.
@@ -85,6 +85,6 @@ def list_files(directory_path: str) -> list[str]:
     if not os.path.exists(directory_path):
         return [f"Could not find directory {directory_path}"]
 
-    return [f for f in os.listdir(directory_path) if os.path.join(directory_path, f)]
+    return os.listdir(directory_path)
 
 
